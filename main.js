@@ -78,10 +78,37 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTopBtn.classList.remove('show');
       }
     }
+
+    // Active Nav Link on Scroll
+    const sections = document.querySelectorAll('section[id], header[id]');
+    const scrollPos = window.scrollY + 200;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+      const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (scrollPos >= top && scrollPos < top + height) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        navLink?.classList.add('active');
+      }
+    });
   }, { passive: true });
 
   backToTopBtn?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Smooth scroll for nav anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (!href || !href.startsWith('#')) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
 
   // ── 6. Typewriter Effect ──────────────────────────────────
