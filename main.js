@@ -281,15 +281,9 @@ function applyPhoto(src) {
   }
 }
 
-// On page load: show initials until a saved photo exists
+// On page load: use saved photo or bundled profile.jpg
 const savedPhoto = localStorage.getItem('portfolio-photo');
-if (savedPhoto) {
-  applyPhoto(savedPhoto);
-} else {
-  // No saved photo — ensure initials are shown, img is hidden
-  if (profilePhoto) profilePhoto.style.display = 'none';
-  if (photoInitials) photoInitials.style.display = 'flex';
-}
+applyPhoto(savedPhoto || 'profile.jpg');
 
 photoUpload?.addEventListener('change', e => {
   const file = e.target.files[0];
