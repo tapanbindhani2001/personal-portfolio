@@ -33,34 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   }
 
-  // ── 3. Mobile Hamburger Menu ──────────────────────────────
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const navMenu = document.getElementById('nav-menu');
-
-  function toggleMenu(forceClose = false) {
-    if (!navMenu || !hamburgerBtn) return;
-    const isOpen = forceClose ? false : !navMenu.classList.contains('open');
-    navMenu.classList.toggle('open', isOpen);
-    hamburgerBtn.innerHTML = isOpen
-      ? '<i data-lucide="x"></i>'
-      : '<i data-lucide="menu"></i>';
-    if (window.lucide) lucide.createIcons();
-  }
-
-  hamburgerBtn?.addEventListener('click', e => {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => toggleMenu(true));
-  });
-
-  document.addEventListener('click', e => {
-    if (navMenu?.classList.contains('open') && !navMenu.contains(e.target) && !hamburgerBtn?.contains(e.target)) {
-      toggleMenu(true);
-    }
-  });
+  // ── 3. Unified Single-Row Navbar ──────────────────────────
+  // Nav links are always accessible in a single horizontal row across all screen sizes.
 
   // ── 4. Mouse-Follow Spotlight Physics on Bento Cards ──────
   document.querySelectorAll('.bento-card').forEach(card => {
