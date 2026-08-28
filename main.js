@@ -263,11 +263,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-/* ── Photo Upload ───────────────────────────── */
-const photoUpload   = document.getElementById('photo-upload');
+/* ── Profile Photo ───────────────────────────── */
 const profilePhoto  = document.getElementById('profile-photo');
 const photoInitials = document.getElementById('photo-initials');
-const uploadHint    = document.querySelector('.photo-upload-hint');
 
 function applyPhoto(src) {
   if (!profilePhoto) return;
@@ -276,24 +274,7 @@ function applyPhoto(src) {
   if (photoInitials) photoInitials.style.display = 'none';
 }
 
-// On page load: use bundled profile.jpg or user-uploaded photo
-const savedPhoto = localStorage.getItem('portfolio-photo');
-if (savedPhoto && savedPhoto.startsWith('data:image')) {
-  applyPhoto(savedPhoto);
-} else {
-  applyPhoto('profile.jpg');
-}
-
-photoUpload?.addEventListener('change', e => {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    applyPhoto(ev.target.result);
-    try { localStorage.setItem('portfolio-photo', ev.target.result); } catch(err) {}
-  };
-  reader.readAsDataURL(file);
-});
+applyPhoto('profile.jpg');
 
 /* ── Timeline line animation ────────────────── */
 const timelineObserver = new IntersectionObserver(entries => {
