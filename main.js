@@ -274,16 +274,15 @@ function applyPhoto(src) {
   profilePhoto.src = src;
   profilePhoto.style.display = 'block';
   if (photoInitials) photoInitials.style.display = 'none';
-  if (uploadHint) {
-    uploadHint.style.opacity = '0';
-    uploadHint.style.transform = 'translateX(-50%) scale(0.8)';
-    setTimeout(() => { uploadHint.style.display = 'none'; }, 400);
-  }
 }
 
-// On page load: use saved photo or bundled profile.jpg
+// On page load: use bundled profile.jpg or user-uploaded photo
 const savedPhoto = localStorage.getItem('portfolio-photo');
-applyPhoto(savedPhoto || 'profile.jpg');
+if (savedPhoto && savedPhoto.startsWith('data:image')) {
+  applyPhoto(savedPhoto);
+} else {
+  applyPhoto('profile.jpg');
+}
 
 photoUpload?.addEventListener('change', e => {
   const file = e.target.files[0];
