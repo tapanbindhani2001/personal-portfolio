@@ -273,32 +273,22 @@ img {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 12px;
   background: rgba(10, 15, 28, 0.75);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
-  padding: 8px 12px 8px 24px;
+  padding: 6px 8px 6px 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  max-width: 820px;
-  width: 100%;
+  width: auto;
+  max-width: 680px;
   transition: all var(--transition);
 }
 [data-theme="light"] .navbar {
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-.nav-brand {
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-weight: 800;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.5px;
 }
 
 .nav-menu {
