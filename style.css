@@ -1320,3 +1320,420 @@ img{max-width:100%}
   border-color: #cbd5e1;
   color: #0f172a;
 }
+
+/* ═══════════════════════════════════════════════════════
+   COMPREHENSIVE MOBILE & DEVICE RESPONSIVENESS (ALL SCREENS)
+═══════════════════════════════════════════════════════ */
+
+/* ── 1. Disable Custom Floating Cursor on Touch Devices ── */
+@media (hover: none) or (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+  body, a, button, .btn {
+    cursor: auto !important;
+  }
+}
+
+/* ── 2. General Tablet & Medium Screen Polish (< 860px) ── */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+    padding: 100px 18px 50px !important;
+    text-align: center !important;
+    gap: 28px !important;
+    min-height: auto !important;
+  }
+  .hero-content {
+    align-items: center !important;
+  }
+  .hero-visual {
+    order: -1 !important;
+    margin: 10px 0 0 !important;
+    animation: none !important;
+  }
+  .photo-container {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  .photo-upload-hint {
+    top: -46px !important;
+    font-size: 0.72rem !important;
+    padding: 6px 14px !important;
+  }
+  .photo-upload-btn {
+    bottom: 8px !important;
+    right: 8px !important;
+    padding: 6px 12px !important;
+    font-size: 0.7rem !important;
+  }
+  .code-badge,
+  .hero-mini-badges {
+    display: none !important;
+  }
+  .hero-greeting {
+    font-size: 0.9rem !important;
+  }
+  .hero-name {
+    font-size: 2.4rem !important;
+    letter-spacing: -1px !important;
+    line-height: 1.15 !important;
+  }
+  .hero-name-line2 {
+    font-size: 1.15rem !important;
+    margin-top: 6px !important;
+  }
+  .hero-title {
+    justify-content: center !important;
+    font-size: 1.05rem !important;
+    min-height: auto !important;
+    gap: 6px !important;
+  }
+  .hero-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.75 !important;
+    padding: 0 4px !important;
+  }
+  .hero-btns {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .hero-btns .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .hero-socials {
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* Navigation on mobile */
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex !important;
+  }
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 70px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: var(--nav-bg) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    padding: 20px 18px !important;
+    gap: 8px !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
+    z-index: 10000 !important;
+  }
+  .nav-link {
+    font-size: 0.95rem !important;
+    padding: 12px 16px !important;
+    background: var(--surface) !important;
+    border-radius: 10px !important;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background: var(--surface-hover) !important;
+  }
+}
+
+/* ── 3. Small Mobile Screen Polish (< 600px) ── */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 16px !important;
+  }
+  .section {
+    padding: 60px 0 !important;
+  }
+  .section-header {
+    margin-bottom: 30px !important;
+  }
+  .section-title {
+    font-size: 1.75rem !important;
+    letter-spacing: -0.5px !important;
+  }
+  .section-subtitle {
+    font-size: 0.88rem !important;
+  }
+  .section-tag {
+    font-size: 0.72rem !important;
+  }
+
+  /* About section mobile */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .about-text {
+    padding: 24px 18px !important;
+  }
+  .about-text p {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+  }
+  .about-facts {
+    gap: 10px !important;
+    margin-top: 18px !important;
+    padding-top: 16px !important;
+  }
+  .fact-item {
+    padding: 8px !important;
+  }
+  .about-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+  .stat-card {
+    padding: 20px 14px !important;
+  }
+  .stat-number {
+    font-size: 1.9rem !important;
+  }
+  .stat-label {
+    font-size: 0.68rem !important;
+  }
+
+  /* Skills section mobile */
+  .skill-feature-card {
+    padding: 20px 16px !important;
+  }
+  .skill-feature-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 14px !important;
+  }
+  .skill-feature-icon {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.2rem !important;
+  }
+  .skill-feature-title {
+    font-size: 1.05rem !important;
+  }
+  .skill-bar-item {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+  }
+  .skill-bar-name {
+    min-width: unset !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    font-size: 0.8rem !important;
+  }
+  .skill-bar-pct {
+    display: none !important;
+  }
+  .skill-bar-track {
+    height: 7px !important;
+  }
+  .skills-main {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .skill-category {
+    padding: 20px 16px !important;
+  }
+  .chip {
+    padding: 5px 11px !important;
+    font-size: 0.74rem !important;
+  }
+  .system-design-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .sd-card {
+    padding: 16px 14px !important;
+  }
+
+  /* Projects section mobile */
+  .projects-filter {
+    gap: 6px !important;
+    margin-bottom: 24px !important;
+  }
+  .filter-btn {
+    padding: 8px 16px !important;
+    font-size: 0.78rem !important;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .project-card {
+    padding: 20px 16px !important;
+  }
+  .project-card.featured {
+    grid-column: 1 !important;
+  }
+  .project-title {
+    font-size: 1.15rem !important;
+  }
+  .project-subtitle {
+    font-size: 0.78rem !important;
+  }
+  .project-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.65 !important;
+  }
+  .project-highlights {
+    padding: 10px 12px !important;
+    gap: 5px !important;
+  }
+  .highlight-item {
+    font-size: 0.76rem !important;
+  }
+  .tech-tag {
+    padding: 3px 8px !important;
+    font-size: 0.7rem !important;
+  }
+  .btn-deepdive {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 0.76rem !important;
+  }
+
+  /* Timeline & Experience mobile */
+  .timeline {
+    padding-left: 20px !important;
+  }
+  .timeline-dot {
+    left: -27px !important;
+    top: 20px !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .timeline-content {
+    padding: 20px 16px !important;
+  }
+  .timeline-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+  }
+  .timeline-title {
+    font-size: 1.05rem !important;
+  }
+  .timeline-company {
+    font-size: 0.82rem !important;
+  }
+  .timeline-date {
+    font-size: 0.72rem !important;
+    padding: 4px 10px !important;
+  }
+  .timeline-achievements {
+    padding-left: 14px !important;
+    gap: 7px !important;
+  }
+  .timeline-achievements li {
+    font-size: 0.82rem !important;
+    line-height: 1.65 !important;
+  }
+  .edu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .edu-card {
+    padding: 16px 14px !important;
+    gap: 12px !important;
+  }
+  .edu-icon {
+    font-size: 1.7rem !important;
+  }
+  .edu-details h3 {
+    font-size: 0.85rem !important;
+  }
+  .edu-institution {
+    font-size: 0.75rem !important;
+  }
+
+  /* Contact section mobile */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .contact-card {
+    padding: 20px 16px !important;
+  }
+  .contact-value {
+    font-size: 0.82rem !important;
+  }
+  .contact-cta .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Modal on mobile */
+  .project-modal-backdrop {
+    padding: 12px !important;
+  }
+  .project-modal-dialog {
+    padding: 24px 16px !important;
+    max-height: 90vh !important;
+    border-radius: 14px !important;
+  }
+  .modal-header {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+    padding-bottom: 14px !important;
+  }
+  .modal-title {
+    font-size: 1.2rem !important;
+  }
+  .modal-subtitle {
+    font-size: 0.78rem !important;
+  }
+  .modal-arch-box {
+    font-size: 0.68rem !important;
+    padding: 12px 10px !important;
+  }
+  .modal-bullets li {
+    font-size: 0.8rem !important;
+  }
+  .modal-close-btn {
+    top: 10px !important;
+    right: 10px !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 1.2rem !important;
+  }
+
+  /* Back to Top & Toast on mobile */
+  .back-to-top-btn {
+    bottom: 20px !important;
+    right: 18px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .toast-popup {
+    bottom: 20px !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    font-size: 0.82rem !important;
+  }
+  .footer {
+    padding: 28px 0 !important;
+  }
+  .footer-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 14px !important;
+  }
+}
