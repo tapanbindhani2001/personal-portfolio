@@ -37,14 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('hamburger-btn');
   const navMenu = document.getElementById('nav-menu');
 
-  hamburgerBtn?.addEventListener('click', () => {
-    navMenu?.classList.toggle('open');
+  function toggleMenu(forceClose = false) {
+    if (!navMenu || !hamburgerBtn) return;
+    const isOpen = forceClose ? false : !navMenu.classList.contains('open');
+    navMenu.classList.toggle('open', isOpen);
+    hamburgerBtn.innerHTML = isOpen
+      ? '<i data-lucide="x"></i>'
+      : '<i data-lucide="menu"></i>';
+    if (window.lucide) lucide.createIcons();
+  }
+
+  hamburgerBtn?.addEventListener('click', e => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu?.classList.remove('open');
-    });
+    link.addEventListener('click', () => toggleMenu(true));
+  });
+
+  document.addEventListener('click', e => {
+    if (navMenu?.classList.contains('open') && !navMenu.contains(e.target) && !hamburgerBtn?.contains(e.target)) {
+      toggleMenu(true);
+    }
   });
 
   // ── 4. Mouse-Follow Spotlight Physics on Bento Cards ──────
