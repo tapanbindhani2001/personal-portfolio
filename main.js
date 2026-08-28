@@ -317,18 +317,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Hero photo mouse parallax ──────────────── */
-const heroVisual = document.querySelector('.hero-visual');
-let floatT = 0;
-function heroFloat() {
-  floatT += 0.008;
-  if (heroVisual) {
-    heroVisual.style.transform = `translateY(${Math.sin(floatT) * 12}px) rotateY(${Math.sin(floatT * 0.5) * 3}deg)`;
-  }
-  requestAnimationFrame(heroFloat);
-}
-heroFloat();
-
 /* ── Ripple effect on buttons ───────────────── */
 document.querySelectorAll('.btn').forEach(btn => {
   btn.addEventListener('click', function(e) {

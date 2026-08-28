@@ -474,9 +474,8 @@ img{max-width:100%}
 }
 .social-link:hover svg{transform:scale(1.1)}
 
-/* ── Hero Visual / Photo ── */
-.hero-visual{display:flex;justify-content:center;align-items:center;z-index:1;animation:float 7s ease-in-out infinite}
-.photo-container{position:relative;width:360px;height:360px}
+.hero-visual{display:flex;justify-content:center;align-items:center;z-index:1;opacity:1!important;animation:float 7s ease-in-out infinite}
+.photo-container{position:relative;width:340px;height:340px}
 .photo-ring{
   position:absolute;inset:-18px;border-radius:50%;
   background:conic-gradient(from 0deg,#7c3aed,#06b6d4,#ec4899,#7c3aed);
