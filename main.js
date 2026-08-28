@@ -377,19 +377,20 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 0.2
     });
 
-    // Bento Cards Scroll Stagger
+    // Bento Cards Scroll Stagger with clean post-animation reset
     document.querySelectorAll('.about-bento-grid, .skills-grid, .projects-grid').forEach(grid => {
       gsap.from(grid.querySelectorAll('.bento-card'), {
         scrollTrigger: {
           trigger: grid,
-          start: 'top 85%',
+          start: 'top 88%',
           toggleActions: 'play none none none'
         },
         opacity: 0,
-        y: 40,
-        stagger: 0.12,
-        duration: 0.8,
-        ease: 'power3.out'
+        y: 28,
+        stagger: 0.08,
+        duration: 0.7,
+        ease: 'power2.out',
+        clearProps: 'all'
       });
     });
 
